@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container, VStack, Heading, Box, Checkbox, Text, Flex, Input, IconButton } from "@chakra-ui/react";
-import { EditIcon, CheckIcon, CloseIcon } from "@chakra-ui/icons";
+import { AiOutlineEdit, AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 
 const scoutsData = [
   {
@@ -62,13 +62,13 @@ const Index = () => {
                         mr={2}
                       />
                       <IconButton
-                        icon={<CheckIcon />}
+                        icon={<AiOutlineCheck />}
                         size="sm"
                         onClick={handleSave}
                         mr={2}
                       />
                       <IconButton
-                        icon={<CloseIcon />}
+                        icon={<AiOutlineClose />}
                         size="sm"
                         onClick={handleCancel}
                       />
@@ -77,7 +77,7 @@ const Index = () => {
                     <>
                       <Text flex="1">- {idea}</Text>
                       <IconButton
-                        icon={<EditIcon />}
+                        icon={<AiOutlineEdit />}
                         size="sm"
                         onClick={() => handleEdit(scoutIdx, ideaIdx, idea)}
                       />
