@@ -17,6 +17,8 @@ const scoutsData = [
   },
 ];
 
+const rainbowColors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#8B00FF"];
+
 const Index = () => {
   const [scouts, setScouts] = useState(scoutsData);
   const [editIdx, setEditIdx] = useState({ scoutIdx: null, ideaIdx: null });
@@ -45,7 +47,15 @@ const Index = () => {
       <VStack spacing={8}>
         <Heading as="h1" size="xl">VC Scouts Tracker</Heading>
         {scouts.map((scout, scoutIdx) => (
-          <Box key={scoutIdx} w="100%" p={5} shadow="md" borderWidth="1px" borderRadius="md">
+          <Box
+            key={scoutIdx}
+            w="100%"
+            p={5}
+            shadow="md"
+            borderWidth="1px"
+            borderRadius="md"
+            bg={rainbowColors[scoutIdx % rainbowColors.length]}
+          >
             <Flex justify="space-between" align="center">
               <Heading as="h2" size="md">{scout.name}</Heading>
               <Checkbox>Met</Checkbox>
